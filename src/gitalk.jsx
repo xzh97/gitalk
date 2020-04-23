@@ -102,6 +102,10 @@ class GitalkComponent extends Component {
         code,
         client_id: this.options.clientID,
         client_secret: this.options.clientSecret
+      },{
+        'headers':{
+          origin: window.location.href,
+        }
       }).then(res => {
         if (res.data && res.data.access_token) {
           this.accessToken = res.data.access_token
